@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: white;
+    color: black;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.site-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(75, 75, 75);
+    margin: 0;
+}
+
+.photoB {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(60%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Перемикач теми */
+.ctrl {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.toggle-theme {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    margin-right: 20px;
+}
+
+.toggle-theme:hover {
+    transform: scale(1.1);
+}
+
+.search {
+    width: 60%;
+    max-width: 500px;
+    background-color: white;
+    border-radius: 50px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 50px;
+}
+
+.search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+.bloci-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px; 
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    background-color: #f9f9f9;
+}
+
+.bloci1, .bloci2 {
+    width: 220px;
+    border: 10px ridge rgb(215, 215, 215);
+    background-color: rgb(238, 238, 238);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.bloci1 img, .bloci2 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.costume-name {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 5px 0;
+}
+
+.button1 {
+    height: 30px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.button1:hover {
+    background-color: #444;
+}
+
+/* Темна тема */
+body.dark {
+    background-color: #121212;
+    color: rgb(50, 50, 50);
+}
+
+body.dark .header h1,
+body.dark .costume-name {
+    color: rgb(85, 85, 85);
+}
+
+body.dark .bloci1,
+body.dark .bloci2 {
+    background-color: #1e1e1e;
+    border-color: #444;
+}
+
+body.dark .button1 {
+    background-color: rgb(192, 192, 192);
+    color: black;
+}
+
+body.dark .search {
+    background-color: #2a2a2a;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+body.dark input {
+    background-color: #3a3a3a;
+    color: white;
+}
+
+body.dark .search button svg {
+    fill: white;
+}
+
+/* Адаптивність */
+@media (max-width: 1024px) {
+    .bloci-container {
+        gap: 30px;
+        padding: 30px 15px;
+    }
+
+    .bloci1, .bloci2 {
+        width: 200px;
+        padding: 0.8rem;
+    }
+
+    .costume-name {
+        font-size: 15px;
+    }
+
+    .button1 {
+        font-size: 13px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bloci-container {
+        gap: 20px;
+        padding: 25px 10px;
+    }
+
+    .bloci1, .bloci2 {
+        width: 160px;
+        padding: 0.6rem;
+    }
+
+    .costume-name {
+        font-size: 14px;
+    }
+
+    .button1 {
+        font-size: 12px;
+        height: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bloci-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 20px 10px;
+    }
+
+    .bloci1, .bloci2 {
+        width: 90%;
+        max-width: 280px;
+        padding: 0.8rem;
+    }
+
+    .costume-name {
+        font-size: 16px;
+    }
+
+    .button1 {
+        font-size: 14px;
+        height: 30px;
+    }
+}
